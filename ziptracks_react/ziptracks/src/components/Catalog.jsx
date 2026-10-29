@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 import { catalogFlat } from './data.jsx'
-import Filters from "./Filters.jsx"
+import Filters from "./filters/Filters.jsx"
 import Cards from "./cards/Cards.jsx"
 
 
@@ -19,6 +19,12 @@ const Catalog = () => {
         )
       )
     )
+  }
+
+  const [isDisplayedFilters, setIsDisplayedFilters] = useState(true)
+
+  const filterBtn = () => {
+    setIsDisplayedFilters(!isDisplayedFilters)
   }
 
   return (
@@ -45,13 +51,18 @@ const Catalog = () => {
               onChange={(event) => catalogFilter(event.target.value)}
             />
           </div>
-          <div>Фильтры</div>
+          <button
+            onClick={filterBtn}
+          >
+            Фильтры
+          </button>
         </div>
 
         <Cards
           cardsData={catalogFiltered}
         />
         <Filters
+          isOpen={isDisplayedFilters}
           catalogFlat={catalogFlat}
           setCatalogFiltered={setCatalogFiltered}
         />

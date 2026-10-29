@@ -1,0 +1,14 @@
+.filters {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1000px) {
+    .filters {
+        display: none;
+    }
+
+    .filters--open {
+        display: flex;
+    }
+}
