@@ -1,0 +1,30 @@
+.burger-menu {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .burger-menu {
+        margin-left: auto;
+        display: block;
+        width: 60px;
+        min-width: 50px;
+        aspect-ratio: 1/1;
+        background-color: transparent;
+        border: 0px;
+        transition: transform var(--transition-duration) ease;
+    }
+
+    .burger-menu img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .burger-menu:hover {
+        cursor: pointer;
+    }
+
+    .burger-menu:active {
+        transform: scale(1.05);
+    }
+}

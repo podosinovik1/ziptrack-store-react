@@ -1,0 +1,62 @@
+.header {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    padding: 10px;
+    border-radius: 5px;
+
+    position: relative;
+}
+
+.header-background {
+    position: absolute;
+    width: 200vw;
+    left: -100vw;
+    background-color:  #d8a310;
+    height: 100%;
+    z-index: -1;
+    overflow-x: hidden;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    overflow: hidden;
+}
+
+.logo img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.navigation {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    margin-left: 50px;
+
+    position: relative;
+    
+}
+
+.navigation a {
+    font-family: 'Revolution Gothic';
+    font-size: 42px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 3px;
+    color: rgba(29, 29, 29, 0.9)
+}
+
+.navigation a:hover {
+    transform: scale(1.005);
+}
+
+.header_number {
+    position: absolute;
+    right: 10px
+}

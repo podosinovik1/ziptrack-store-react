@@ -1,0 +1,90 @@
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    height: 500px;
+    border-radius: 5px;
+    margin-top: auto;
+    padding: 15px;
+    padding-top: 40px;
+    gap: 30px 40px;
+    
+
+    position: relative;
+}
+
+.footer-background {
+    position: absolute;
+    width: 200vw;
+    left: -100vw;
+    background-color:  rgba(29, 29, 29, 0.9);
+    height: 100%;
+    z-index: -1;
+    overflow-x: hidden;
+}
+
+.footer a {
+    font-family: 'Revolution Gothic';
+    font-size: 28px;
+    text-decoration: none;
+    color:  rgb(228, 228, 228);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.footer a:hover {
+    transform: scale(1.009);
+}
+
+.map {
+    height: 100%;
+    width: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.map iframe {
+    height: 100%;
+    width: 100%;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 15px 0px;
+}
+
+.contact div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact img {
+    aspect-ratio: 1/1;
+    width: 50px;
+}
+
+.address a:hover {
+    transform: scale(1.005);
+}
+
+.work-hours a:hover {
+    transform: scale(1);
+}
+
+.socials {
+    grid-column: 1/3;
+    display: none;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.policy {
+    margin-top: 20px;
+    grid-column: 1/3;
+    display: flex;
+    justify-self: center;
+}
+
