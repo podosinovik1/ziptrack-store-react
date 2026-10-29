@@ -24,29 +24,38 @@ const Catalog = () => {
   return (
     <>
       <div
-        className="main"
+        className="catalog"
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
-          gridTemplateRows: '1fr',
+          gridTemplateRows: '50px 1fr',
           gap: '30px',
         }}>
+        <div
+          className="catalog__header"
+          style={{
+            gridColumn: '1 / 3',
+            gridRow: '1 / 2',
 
-        <div className="catalog">
-          <input
-            onChange={(event) => catalogFilter(event.target.value)}
-          ></input>
-          <Cards
-            cardsData={catalogFiltered}
-          />
+            display: 'flex'
+          }}
+        >
+          <div>
+            <input
+              onChange={(event) => catalogFilter(event.target.value)}
+            />
+          </div>
+          <div>Фильтры</div>
         </div>
 
+        <Cards
+          cardsData={catalogFiltered}
+        />
         <Filters
           catalogFlat={catalogFlat}
           setCatalogFiltered={setCatalogFiltered}
         />
-
-      </div>
+      </div >
     </>
   )
 }

@@ -9,7 +9,7 @@ const Cards = (props) => {
 
   return (
     <div
-    className="cards"
+      className="cards"
     >
       {cardsData.map((p) => (
         <Card
