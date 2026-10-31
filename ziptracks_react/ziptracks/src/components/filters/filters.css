@@ -1,6 +1,8 @@
 .filters-wrapper {
     border: 1px solid var(--accent);
     width: 300px;
+    display: inline;
+    flex-direction: column;
 }
 
 .filters {
@@ -9,7 +11,7 @@
     width: 250px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
     .filters-wrapper {
         position: absolute;
         right: -5px;

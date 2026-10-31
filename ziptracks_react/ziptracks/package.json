@@ -12,7 +12,8 @@
   "dependencies": {
     "motion": "^14.6.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "react-intersection-observer": "^11.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

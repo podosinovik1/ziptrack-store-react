@@ -3,6 +3,7 @@ import { useState } from "react"
 import { catalogFlat } from '../data.jsx'
 import Filters from "../filters/Filters.jsx"
 import Cards from "../cards/Cards.jsx"
+import BucketPlaceholder from "./BucketPlaceholder.jsx"
 
 import './catalog.css'
 import Bucket from "../bucket/Bucket.jsx"
@@ -36,21 +37,20 @@ const Catalog = () => {
   return (
     <>
       <div
+        className="catalog__header"
+      >
+        <input
+          onChange={(event) => catalogFilter(event.target.value)}
+        />
+        <button
+          onClick={filterBtn}
+        >
+          Фильтры
+        </button>
+      </div >
+      <div
         className="catalog"
       >
-        <div
-          className="catalog__header"
-
-        >
-          <input
-            onChange={(event) => catalogFilter(event.target.value)}
-          />
-          <button
-            onClick={filterBtn}
-          >
-            Фильтры
-          </button>
-        </div >
         <Cards
           cardsData={catalogFiltered}
           setSelectedProducts={setSelectedProducts}
@@ -64,6 +64,7 @@ const Catalog = () => {
         <Bucket
           selectedProducts={selectedProducts}
         />
+
       </div>
 
     </>
