@@ -8,9 +8,10 @@
 :root {
   /* Размер, положение контента */
   --content-max-width: 1440px;
-  --content-height: 1500px;
+  --content-height: 100%;
+  --content-min-height: 1500px;
   --content-margin: auto;
-  --content-padding: 10px;
+  --content-padding: 15px;
 
   /* Шрифт */
   --sans: 'Revolution Gothic', system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -21,11 +22,14 @@
 
   /* Дополнительные эффекты */
   --transition-duration: 0.2s;
+
+  /* Отладка */
+  --outline: 1px dashed rgba(5, 5, 5, 0.3);
 }
 
 * {
   box-sizing: border-box;
-  outline: 4px dashed rgba(201, 102, 102, 0.3);
+  /* outline: var(--outline); */
 }
 
 html {

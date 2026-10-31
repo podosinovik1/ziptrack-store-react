@@ -1,0 +1,15 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid var(--accent);
+    border-radius: 5px;
+    min-width: 200px;
+    width: 20vw;
+    max-width: 250px;
+    height: 150px;
+}
+
+.select-button {
+    width: 70px;
+    height: 40px;
+}

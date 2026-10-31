@@ -1,14 +1,40 @@
+.filters-wrapper {
+    border: 1px solid var(--accent);
+    width: 300px;
+}
+
 .filters {
     display: flex;
     flex-direction: column;
+    width: 250px;
 }
 
 @media (max-width: 1000px) {
-    .filters {
+    .filters-wrapper {
+        position: absolute;
+        right: -5px;
+        background-color: white;
         display: none;
     }
 
     .filters--open {
         display: flex;
+        animation: filters 0.3s ease;
     }
+
+    @keyframes filters {
+        from {
+            margin-right: -50%;
+            transform: scale(1);
+        }
+
+        to {
+            margin-right: 0%;
+            transform: scale(1);
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .filters-wrapper {}
 }

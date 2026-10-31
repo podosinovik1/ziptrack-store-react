@@ -1,6 +1,6 @@
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import Catalog from "./components/Catalog"
+import Content from "./components/content/Content"
 
 import './styles/header.css'
 import './styles/menu.css'
@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Header />
-      <Catalog />
+      <Content />
       <Footer />
     </>
 

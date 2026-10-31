@@ -1,8 +1,11 @@
 import { useState } from "react"
 
-import { catalogFlat } from './data.jsx'
-import Filters from "./filters/Filters.jsx"
-import Cards from "./cards/Cards.jsx"
+import { catalogFlat } from '../data.jsx'
+import Filters from "../filters/Filters.jsx"
+import Cards from "../cards/Cards.jsx"
+
+import './catalog.css'
+import Bucket from "../bucket/Bucket.jsx"
 
 
 const Catalog = () => {
@@ -27,46 +30,42 @@ const Catalog = () => {
     setIsDisplayedFilters(!isDisplayedFilters)
   }
 
+  const [selectedProducts, setSelectedProducts] = useState({})
+
+
   return (
     <>
       <div
         className="catalog"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gridTemplateRows: '50px 1fr',
-          gap: '30px',
-        }}>
+      >
         <div
           className="catalog__header"
-          style={{
-            gridColumn: '1 / 3',
-            gridRow: '1 / 2',
 
-            display: 'flex'
-          }}
         >
-          <div>
-            <input
-              onChange={(event) => catalogFilter(event.target.value)}
-            />
-          </div>
+          <input
+            onChange={(event) => catalogFilter(event.target.value)}
+          />
           <button
             onClick={filterBtn}
           >
             Фильтры
           </button>
-        </div>
-
+        </div >
         <Cards
           cardsData={catalogFiltered}
+          setSelectedProducts={setSelectedProducts}
         />
         <Filters
           isOpen={isDisplayedFilters}
           catalogFlat={catalogFlat}
           setCatalogFiltered={setCatalogFiltered}
         />
-      </div >
+
+        <Bucket
+          selectedProducts={selectedProducts}
+        />
+      </div>
+
     </>
   )
 }

@@ -75,5 +75,10 @@ const facetExtraction = (o, k) => {
   return facet
 }
 
+const incrementCounter = (l, k) => {
+  const c = l?.[k] ?? 0; 
+  return { ...l, [k]: c + 1 };
+}
+
 
 export { dataFilter, appendUnique, removeItem, facetExtraction }

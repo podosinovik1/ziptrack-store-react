@@ -5,8 +5,8 @@ import './filters.css'
 
 const Filters = (props) => {
   // Получаем данные и сеттер из родительского компонента Catalog
-  const { 
-    catalogFlat, 
+  const {
+    catalogFlat,
     setCatalogFiltered,
     isOpen,
   } = props
@@ -28,29 +28,35 @@ const Filters = (props) => {
   }
 
   return (
-    <div
-      className={`filters  ${isOpen ? 'filters--open'  : 'filter--close'}`}
+    <div 
+      className={`filters-wrapper ${isOpen ? 'filters--open' : 'filter--close'}` }
     >
-      {Object.entries(manufacturerFilters).map(([field, values]) => (
-        <FilterGroup
-          key={field}
-          groupName={field}
-          values={values}
-          filters={filters}
-          filterHandler={filterHandler}
-        />
-      ))}
+      <h1>Фильтры</h1>
+      <div
+        className="filters"
+      >
+        {Object.entries(manufacturerFilters).map(([field, values]) => (
+          <FilterGroup
+            key={field}
+            groupName={field}
+            values={values}
+            filters={filters}
+            filterHandler={filterHandler}
+          />
+        ))}
 
-      {Object.entries(modelFilters).map(([field, values]) => (
-        <FilterGroup
-          key={field}
-          groupName={field}
-          values={values}
-          filters={filters}
-          filterHandler={filterHandler}
-        />
-      ))}
+        {Object.entries(modelFilters).map(([field, values]) => (
+          <FilterGroup
+            key={field}
+            groupName={field}
+            values={values}
+            filters={filters}
+            filterHandler={filterHandler}
+          />
+        ))}
+      </div>
     </div>
+
   )
 }
 

@@ -1,0 +1,4 @@
+.content {
+    padding: var(--content-padding);
+    min-height: 800px;
+}
