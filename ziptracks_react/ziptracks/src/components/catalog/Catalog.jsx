@@ -3,7 +3,6 @@ import { useState } from "react"
 import { catalogFlat } from '../data.jsx'
 import Filters from "../filters/Filters.jsx"
 import Cards from "../cards/Cards.jsx"
-import BucketPlaceholder from "./BucketPlaceholder.jsx"
 
 import './catalog.css'
 import Bucket from "../bucket/Bucket.jsx"
@@ -25,7 +24,7 @@ const Catalog = () => {
     )
   }
 
-  const [isDisplayedFilters, setIsDisplayedFilters] = useState(true)
+  const [isDisplayedFilters, setIsDisplayedFilters] = useState(false)
 
   const filterBtn = () => {
     setIsDisplayedFilters(!isDisplayedFilters)
@@ -33,16 +32,19 @@ const Catalog = () => {
 
   const [selectedProducts, setSelectedProducts] = useState({})
 
+  const [isDisplayedBucket, setIsDisplayedBucket] = useState(false)
+
+  const bucketToggler = () => {
+    setIsDisplayedBucket(!isDisplayedBucket)
+  }
 
   return (
     <>
       <div
         className="catalog__header"
       >
-        <input
-          onChange={(event) => catalogFilter(event.target.value)}
-        />
         <button
+          className="filter-button"
           onClick={filterBtn}
         >
           Фильтры
@@ -62,6 +64,8 @@ const Catalog = () => {
         />
 
         <Bucket
+          isOpen={isDisplayedBucket}
+          bucketToggler={bucketToggler}
           selectedProducts={selectedProducts}
         />
 

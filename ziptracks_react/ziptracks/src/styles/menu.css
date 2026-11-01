@@ -35,10 +35,10 @@
         display: none;
         flex-direction: column;
         position: absolute;
-        z-index: 100;
         gap: 5px;
         top: 95px;
         right: 0%;
+        z-index: 1000;
     }
 
     .menu a {

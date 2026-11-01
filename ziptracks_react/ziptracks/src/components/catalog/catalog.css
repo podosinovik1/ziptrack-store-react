@@ -1,8 +1,12 @@
 .catalog__header {
+    padding: 0 var(--content-padding);
     display: flex;
-    justify-content: left;
+    justify-content: right;
     width: 100%;
     display: none;
+}
+
+.filter-button {
 }
 
 .catalog {
@@ -12,6 +16,7 @@
     grid-template-rows: auto;
     min-height: 800px;
     gap: 10px;
+    z-index: 0;
 }
 
 

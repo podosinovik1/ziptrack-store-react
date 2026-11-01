@@ -6,11 +6,18 @@
     min-width: 200px;
     width: 20vw;
     max-width: 250px;
-    height: auto;
+    height: 150px;
     font-size: 24px;
 }
 
 .select-button {
     width: 70px;
     height: 40px;
+}
+
+@media (max-width: 800px) {
+    .card {
+        max-width: 100%;
+        width: auto;
+    }
 }

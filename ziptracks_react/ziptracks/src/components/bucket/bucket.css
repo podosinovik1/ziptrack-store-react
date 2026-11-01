@@ -1,27 +1,60 @@
 .bucket-wrapper {
-    height: 200px;
+    height: auto;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bucket-bottomsheet {
+    display: none;
+}
+
+.bucket-mini {
+    background-color: brown;
 }
 
 .bucket {
-    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    width: 200px;
     background-color: var(--accent);
 }
 
 @media (max-width: 800px) {
-    .bucket {
+    .bucket-bottomsheet--displayed {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         position: fixed;
         bottom: 0px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 100;
-        width: 200px;
-        margin: 0 auto;
+    }
+
+    .bucket {
+        display: none;
+    }
+
+    .bucket--open {
+        display: flex;
+        animation: bucket-slide-up 0.3s ease;
     }
 
     .bucket--docked {
-        position: static;
-        transform: none;
-        z-index: 1;
+        display: flex;
     }
+
+    @keyframes bucket-slide-up {
+        from {
+            margin-bottom: -50%;
+            transform: scale(1);
+        }
+
+        to {
+            margin-bottom: 0%;
+            transform: scale(1);
+        }
+    }
+
 }

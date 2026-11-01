@@ -2,26 +2,66 @@ import { useInView } from "react-intersection-observer"
 import './bucket.css'
 
 const Bucket = (props) => {
-    const { ref, inView } = useInView({
-        threshold: 1.0,
-    })
+  const { ref, inView } = useInView({
+    threshold: 0.0,
+  })
 
-    const { selectedProducts } = props
+  const {
+    selectedProducts,
+    isOpen,
+    bucketToggler
+  } = props
+
+  const FullBucket = (props) => {
+    const {
+      className,
+    } = props
 
     return (
-        <div ref={ref} className="bucket-wrapper">
-            
-            <div className={`bucket ${inView ? 'bucket--docked' : ''}`}>
-                <h1>Корзина</h1>
-                {Object.entries(selectedProducts).map(([id, count]) => (
-                    <div key={id}>
-                        Товар с ID: {id} — Количество: {count}
-                    </div>
-                ))}
-            </div>
-            
-        </div>
+      <div
+        className={`bucket ${className}`}
+      >
+        <a>Корзина Полная</a>
+        {Object.entries(selectedProducts).map(([id, count]) => (
+          <div key={id}>
+            Товар с ID: {id} — Количество: {count}
+          </div>
+        ))}
+      </div>
     )
+
+  }
+
+  return (
+    <div ref={ref} className="bucket-wrapper">
+      <div
+        className={`bucket-bottomsheet ${inView ? '' : 'bucket-bottomsheet--displayed'}`}
+      >
+        <button
+          onClick={bucketToggler}
+        >Открыть
+        </button>
+        {
+          isOpen ?
+            (
+              <FullBucket
+                className='bucket--open'
+              />
+            ) :
+            (
+              <div
+                className='bucket-mini'
+              >Маленькая Корзина</div>
+            )
+        }
+      </div>
+
+      <FullBucket
+        className='bucket--docked'
+      />
+
+    </div>
+  )
 }
 
 export default Bucket

@@ -1,9 +1,11 @@
 import { useState } from "react"
+
 import { dataFilter, appendUnique, removeItem, facetExtraction } from "../utilits/filter.js"
 import FilterGroup from "./FilterGroup.jsx"
 import './filters.css'
 
 const Filters = (props) => {
+
   // Получаем данные и сеттер из родительского компонента Catalog
   const {
     catalogFlat,
@@ -28,10 +30,10 @@ const Filters = (props) => {
   }
 
   return (
-    <div 
-      className={`filters-wrapper ${isOpen ? 'filters--open' : 'filter--close'}` }
+    <div
+      className={`filters-wrapper ${isOpen ? 'filters--open' : 'filter--close'}`}
     >
-      <h1>Фильтры</h1>
+      <a>Фильтры</a>
       <div
         className="filters"
       >

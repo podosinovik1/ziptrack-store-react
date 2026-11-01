@@ -1,22 +1,28 @@
 .filters-wrapper {
-    border: 1px solid var(--accent);
-    width: 300px;
-    display: inline;
+    border: 3px solid var(--accent);
+    width: 260px;
+    display: flex;
     flex-direction: column;
+    padding: var(--content-padding);
 }
 
 .filters {
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: auto;
 }
 
 @media (max-width: 800px) {
     .filters-wrapper {
         position: absolute;
-        right: -5px;
+        top: var(--content-padding);
+        width: 102%;
+        height: 100vh;
+        overflow: hidden;
+        right: -1%;
         background-color: white;
         display: none;
+        align-items: center;
     }
 
     .filters--open {
@@ -35,8 +41,4 @@
             transform: scale(1);
         }
     }
-}
-
-@media (max-width: 800px) {
-    .filters-wrapper {}
 }
