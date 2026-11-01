@@ -9,9 +9,14 @@ const FilterGroup = (props) => {
     filterHandler,
   } = props
 
+  const displayedGroupName = {
+    "manufacturer": "Производитель",
+    "model": "Модель"
+  }
+
   return (
     <>
-      <h2>{groupName}</h2>
+      <h2>{displayedGroupName[groupName]}</h2>
       <div>
         {values.map((f) =>
           <Filter

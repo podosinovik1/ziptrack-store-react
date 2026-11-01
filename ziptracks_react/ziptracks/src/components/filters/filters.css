@@ -6,6 +6,10 @@
     padding: var(--content-padding);
 }
 
+.filters-header {
+    display: none;
+}
+
 .filters {
     display: flex;
     flex-direction: column;
@@ -23,6 +27,34 @@
         background-color: white;
         display: none;
         align-items: center;
+    }
+
+    .filters-header {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .filters-header__title {
+        justify-self: center;
+    }
+
+    .filters-cls-btn {
+        margin-left: auto;
+        background-color: transparent;
+        border: 0px;
+        width: 50px;
+        transition: transform var(--transition-duration) ease;
+    }
+
+    .filters-cls-btn img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .filters-cls-btn:active {
+        transform: scale(1.05);
     }
 
     .filters--open {

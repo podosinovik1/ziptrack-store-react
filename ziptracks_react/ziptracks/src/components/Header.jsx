@@ -1,7 +1,7 @@
 import { useState } from 'react'
  
 import Menu from './Menu'
-import BurgerMenu from './BurgerMenu'
+import BurgerMenuBtn from './BurgerMenuBtn'
 
 import logo from '../assets/icons/logo.png'
 
@@ -30,7 +30,7 @@ const Header = () => {
         isOpen={isOpen}
         navigationLinks={navigationLinks}
       />
-      <BurgerMenu
+      <BurgerMenuBtn
         switchIcon={switchIcon}
         isOpen={isOpen}
       />

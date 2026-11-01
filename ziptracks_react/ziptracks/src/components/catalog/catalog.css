@@ -6,7 +6,26 @@
     display: none;
 }
 
-.filter-button {
+.filter-btn {
+    background-color: transparent;
+    border: 0px;
+    width: 50px;
+    transition: transform var(--transition-duration) ease;
+}
+
+.filter-btn img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.filter-btn:active {
+    transform: scale(1.05);
+}
+
+/* Когда кнопка в состоянии highlight, применяем фильтр к картинке внутри неё */
+.filter-btn--highlight img {
+    filter: brightness(0) saturate(100%) invert(82%) sepia(15%) saturate(1481%) hue-rotate(359deg) brightness(97%) contrast(104%);
 }
 
 .catalog {
@@ -24,7 +43,7 @@
     .catalog {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
-        
+
         overflow-x: hidden;
         position: relative;
     }

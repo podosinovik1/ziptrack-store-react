@@ -6,6 +6,7 @@ import Cards from "../cards/Cards.jsx"
 
 import './catalog.css'
 import Bucket from "../bucket/Bucket.jsx"
+import FilterOpenBtn from "./FilterOpenBtn.jsx"
 
 
 const Catalog = () => {
@@ -24,18 +25,18 @@ const Catalog = () => {
     )
   }
 
-  const [isDisplayedFilters, setIsDisplayedFilters] = useState(false)
+  const [isOpenFilters, setIsOpenFilters] = useState(false)
 
-  const filterBtn = () => {
-    setIsDisplayedFilters(!isDisplayedFilters)
+  const toggleFilters = () => {
+    setIsOpenFilters(!isOpenFilters)
   }
 
   const [selectedProducts, setSelectedProducts] = useState({})
 
-  const [isDisplayedBucket, setIsDisplayedBucket] = useState(false)
+  const [isOpenBucket, setIsOpenBucket] = useState(false)
 
-  const bucketToggler = () => {
-    setIsDisplayedBucket(!isDisplayedBucket)
+  const toggleBucket = () => {
+    setIsOpenBucket(!isOpenBucket)
   }
 
   return (
@@ -43,12 +44,11 @@ const Catalog = () => {
       <div
         className="catalog__header"
       >
-        <button
-          className="filter-button"
-          onClick={filterBtn}
-        >
-          Фильтры
-        </button>
+        <FilterOpenBtn
+          className='filter-btn'
+          isOpen={isOpenFilters}
+          onOpen={toggleFilters}
+        />
       </div >
       <div
         className="catalog"
@@ -58,14 +58,15 @@ const Catalog = () => {
           setSelectedProducts={setSelectedProducts}
         />
         <Filters
-          isOpen={isDisplayedFilters}
+          isOpen={isOpenFilters}
           catalogFlat={catalogFlat}
           setCatalogFiltered={setCatalogFiltered}
+          onClose={toggleFilters}
         />
 
         <Bucket
-          isOpen={isDisplayedBucket}
-          bucketToggler={bucketToggler}
+          isOpen={isOpenBucket}
+          bucketToggler={toggleBucket}
           selectedProducts={selectedProducts}
         />
 

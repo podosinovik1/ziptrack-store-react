@@ -3,6 +3,7 @@ import { useState } from "react"
 import { dataFilter, appendUnique, removeItem, facetExtraction } from "../utilits/filter.js"
 import FilterGroup from "./FilterGroup.jsx"
 import './filters.css'
+import FilterCloseBtn from "./FilterCloseBtn.jsx"
 
 const Filters = (props) => {
 
@@ -11,6 +12,7 @@ const Filters = (props) => {
     catalogFlat,
     setCatalogFiltered,
     isOpen,
+    onClose
   } = props
 
   // Доступные фильтры
@@ -33,10 +35,22 @@ const Filters = (props) => {
     <div
       className={`filters-wrapper ${isOpen ? 'filters--open' : 'filter--close'}`}
     >
-      <a>Фильтры</a>
       <div
         className="filters"
       >
+        <div
+          className="filters-header"
+        >
+          <h1
+            className="filters-header__title"
+          >Фильтры
+          </h1>
+          <FilterCloseBtn
+            className='filters-cls-btn'
+            onClose={onClose}
+            isOpen={isOpen}
+          />
+        </div>
         {Object.entries(manufacturerFilters).map(([field, values]) => (
           <FilterGroup
             key={field}
