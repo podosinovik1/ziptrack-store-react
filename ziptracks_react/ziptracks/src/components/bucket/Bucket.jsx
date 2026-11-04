@@ -1,5 +1,8 @@
 import { useInView } from "react-intersection-observer"
+
 import './bucket.css'
+import BucketToggleBtn from "./BucketToggleBtn"
+
 
 const Bucket = (props) => {
   const { ref, inView } = useInView({
@@ -29,7 +32,16 @@ const Bucket = (props) => {
         ))}
       </div>
     )
+  }
 
+  const MiniBucket = () => {
+    return (
+      <div
+        className='bucket-mini'
+      >
+        Маленькая Корзина
+      </div>
+    )
   }
 
   return (
@@ -37,10 +49,10 @@ const Bucket = (props) => {
       <div
         className={`bucket-bottomsheet ${inView ? '' : 'bucket-bottomsheet--displayed'}`}
       >
-        <button
+        <BucketToggleBtn
           onClick={bucketToggler}
-        >Открыть
-        </button>
+          isOpen={isOpen}
+        />
         {
           isOpen ?
             (
@@ -49,9 +61,7 @@ const Bucket = (props) => {
               />
             ) :
             (
-              <div
-                className='bucket-mini'
-              >Маленькая Корзина</div>
+              <MiniBucket/>
             )
         }
       </div>

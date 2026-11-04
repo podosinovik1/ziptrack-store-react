@@ -28,7 +28,7 @@
 .footer a {
     font-family: var(--sans);
 
-    font-size: clamp(20px, 2vw, 32px);
+    font-size: clamp(24px, 2vw, 32px);
     text-decoration: none;
     color: rgb(228, 228, 228);
     text-transform: uppercase;

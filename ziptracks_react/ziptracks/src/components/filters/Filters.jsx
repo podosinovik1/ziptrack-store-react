@@ -41,10 +41,10 @@ const Filters = (props) => {
         <div
           className="filters-header"
         >
-          <h1
+          <div
             className="filters-header__title"
           >Фильтры
-          </h1>
+          </div>
           <FilterCloseBtn
             className='filters-cls-btn'
             onClose={onClose}

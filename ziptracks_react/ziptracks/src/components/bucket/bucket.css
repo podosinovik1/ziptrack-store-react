@@ -1,6 +1,6 @@
 .bucket-wrapper {
     height: auto;
-    width: 100%;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,22 +18,51 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100px;
-    width: 200px;
+    width: 100%;
+    min-height: 200px;
     background-color: var(--accent);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
+    .bucket-wrapper {
+        width: auto;
+        z-index: 2;
+    }
+
     .bucket-bottomsheet--displayed {
         display: flex;
         flex-direction: column;
         align-items: center;
         position: fixed;
         bottom: 0px;
+        width: calc(100vw - 2 * var(--content-padding));
+    }
+
+    .bucket-toggle-btn {
+        height: 32px;
+        width: 60px;
+        background-color: var(--accent-1);
+        border: 0px;
+        border-radius: 5px 5px 0px 0px ;
+    }
+    .bucket-toggle-btn img {
+        object-fit: contain;
+        width: 100%;
+    }
+
+    .bucket-mini {
+        background-color: var(--accent);
+        width: 100%;
+        height: 80px;
+
+        border-radius: 10px 10px 0px 0px;
     }
 
     .bucket {
         display: none;
+        height: 85vh;
+
+        border-radius: 10px 10px 0px 0px;
     }
 
     .bucket--open {
@@ -41,20 +70,20 @@
         animation: bucket-slide-up 0.3s ease;
     }
 
-    .bucket--docked {
-        display: flex;
+    @keyframes bucket-slide-up {
+        0% {
+            opacity: 0;
+            transform: translate(0px, 100px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0px, 0px);
+        }
     }
 
-    @keyframes bucket-slide-up {
-        from {
-            margin-bottom: -50%;
-            transform: scale(1);
-        }
-
-        to {
-            margin-bottom: 0%;
-            transform: scale(1);
-        }
+    .bucket--docked {
+        display: flex;
     }
 
 }

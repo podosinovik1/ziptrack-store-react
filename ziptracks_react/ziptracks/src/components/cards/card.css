@@ -1,23 +1,78 @@
 .card {
     display: flex;
     flex-direction: column;
-    border: 3px solid var(--accent);
     border-radius: 5px;
-    min-width: 200px;
-    width: 20vw;
-    max-width: 250px;
-    height: 150px;
-    font-size: 24px;
+    width: 300px;
+    min-height: 420px;
+    height: auto;
+    max-height: 700px;
+    font-size: 32px;
+    position: relative;
+    box-shadow: 0px 0px 3px;
+}
+
+.card .manufacturer {
+    letter-spacing: 2px;
+    background-color: var(--gray);
+    color: white;
+    padding-left: 10px;
+}
+
+.model {
+    padding-left: 10px;
+    font-size: 28px;
+}
+
+.size {
+    background-color: var(--accent-1);
+    padding-left: 10px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.card__info {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    padding: 10px;
+    gap: 0px 10px;
+}
+
+.image {
+    width: 100%;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .select-button {
-    width: 70px;
-    height: 40px;
+    min-height: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+}
+
+.select-button button {
+    width: 40%;
+    height: 50px;
+    font-family: var(--sans);
+    font-size: 24px;
+    text-transform: uppercase;
+    background-color: var(--accent-2);
+    box-shadow: 0px 0px 2px 0px var(--gray);
+    border: 0px;
+    border-radius: 5px;
+    transition: transform var(--transition-duration-1) ease;
+}
+
+.select-button button:active {
+    transform: scale(0.98);
 }
 
 @media (max-width: 800px) {
-    .card {
-        max-width: 100%;
-        width: auto;
-    }
+    .card {}
 }

@@ -1,4 +1,13 @@
 .content {
     padding: var(--content-padding);
-    min-height: 800px;
+    margin: 15px 0px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+@media (max-width: 1024px) {
+    .content {
+        height: auto;
+    }
 }

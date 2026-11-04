@@ -1,35 +1,44 @@
 @font-face {
-    font-family: 'Revolution Gothic';
-    src: url('./assets/fonts/Revolution_Gothic.ttf') format('truetype'); 
-    font-weight: 400;
-    font-display: swap;
+  font-family: 'Revolution Gothic';
+  src: url('./assets/fonts/Revolution_Gothic.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
 }
 
 :root {
   /* Размер, положение контента */
   --content-max-width: 1440px;
   --content-height: 100%;
-  --content-min-height: 1500px;
   --content-margin: auto;
   --content-padding: 15px;
 
   /* Шрифт */
   --sans: 'Revolution Gothic', system-ui, 'Segoe UI', Roboto, sans-serif;
-  
+
   /* Цвет */
-  --accent: #d8a310;
-  --gray: rgba(29, 29, 29, 1);
+  --accent: #ffc117;
+  --accent-1: #fad570;
+  --accent-2: #ffbb00;
+  --dark-gray: rgba(29, 29, 29, 1);
+  --gray: rgb(50, 50, 50);
 
   /* Дополнительные эффекты */
   --transition-duration: 0.2s;
+  --transition-duration-1: 0.1s;
 
   /* Отладка */
   --outline: 1px dashed rgba(5, 5, 5, 0.3);
+
+  /* Адаптивность */
+  --tablet-width: 1024px;
+
+  /* Основные элементы страницы */
+
 }
 
 * {
   box-sizing: border-box;
-  outline: var(--outline);
+  /* outline: var(--outline); */
 }
 
 html {

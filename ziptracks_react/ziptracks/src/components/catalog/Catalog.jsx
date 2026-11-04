@@ -50,6 +50,9 @@ const Catalog = () => {
           onOpen={toggleFilters}
         />
       </div >
+
+      <hr/>
+
       <div
         className="catalog"
       >

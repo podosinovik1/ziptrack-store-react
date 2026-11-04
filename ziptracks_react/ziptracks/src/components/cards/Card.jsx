@@ -1,4 +1,5 @@
 import './card.css'
+import cat from '../../assets/image/caterpillar.jpg'
 
 const Card = (props) => {
   const {
@@ -14,14 +15,38 @@ const Card = (props) => {
       <div
         className='card'
       >
-        <div>{manufacturer}</div>
-        <div>{model}</div>
-        <div>{size}</div>
-        <button
+        <div
+          className='image'
+        >
+          <img
+            src={cat}
+          >
+          </img>
+        </div>
+
+        <div
+          className='manufacturer'
+        >{manufacturer}
+        </div>
+
+        <div
+          className='model'
+        >{model}</div>
+
+        <div
+          className='size'
+        >{size}</div>
+
+        <div
           className='select-button'
-          onClick={() => addProduct(id)}
-        >Добавить
-        </button>
+        >
+          <button
+            onClick={() => addProduct(id)}
+          >Добавить
+          </button>
+        </div>
+
+
       </div>
     </>
   )
