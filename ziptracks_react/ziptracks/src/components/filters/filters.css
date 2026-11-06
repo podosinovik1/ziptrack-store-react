@@ -30,8 +30,9 @@
 
 @media (max-width: 1024px) {
     .filters-wrapper {
+        border: 1px solid white;
         position: absolute;
-        top: var(--content-padding);
+        top: calc(var(--content-padding) - 1px);
         width: 102%;
         height: 100%;
         overflow: hidden;

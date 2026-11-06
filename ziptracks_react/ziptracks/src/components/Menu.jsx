@@ -1,4 +1,4 @@
-import Link from "./Link"
+import { Link } from "react-router-dom"
 
 const Menu = (props) => {
   const {
@@ -12,13 +12,9 @@ const Menu = (props) => {
     >
       {navigationLinks.map((link, index) => (
         <Link
+          to={link.path}
           className={link.className}
-          key={link.id}
-          id={link.id}
-          href={link.href}
-        > 
-          {link.text}
-        </Link>
+        >{link.text}</Link>
       ))}
     </div>
   )

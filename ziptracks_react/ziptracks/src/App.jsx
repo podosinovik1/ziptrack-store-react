@@ -1,3 +1,5 @@
+import { BrowserRouter as Router} from "react-router-dom"
+
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Content from "./components/content/Content"
@@ -7,13 +9,16 @@ import './styles/menu.css'
 import './styles/burger-menu.css'
 import './styles/footer.css'
 
+
 function App() {
 
   return (
     <>
-      <Header />
-      <Content />
-      <Footer />
+      <Router>
+        <Header />
+        <Content />
+        <Footer />
+      </Router>
     </>
 
   )

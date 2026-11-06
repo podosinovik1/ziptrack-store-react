@@ -2,7 +2,6 @@ import bookNumberIcon from '../assets/icons/book-number.png'
 import locationIcon from '../assets/icons/location.png'
 import emailIcon from '../assets/icons/email.png'
 import clockIcon from '../assets/icons/clock.png'
-import Link from './Link'
 
 
 const Contacts = () => {
@@ -47,14 +46,14 @@ const Contacts = () => {
       {contacts.map((contact) => (
         <div className={contact.className}>
           <img src={contact.icon} alt={contact.alt}></img>
-          <Link
+          <a
             className={contact.className}
             key={contact.id}
             id={contact.id}
             href={contact.href}
           >
             {contact.text}
-          </Link>
+          </a>
           </div>
       ))}
     </div>

@@ -9,9 +9,9 @@ import logo from '../assets/icons/logo.png'
 const Header = () => {
 
   const navigationLinks = [
-    { id: 'general', href: '/', text: 'Главная' },
-    { id: 'catalog', href: '/', text: 'Каталог' },
-    { id: 'contacts', href: '/', text: 'Контакты' },
+    { id: 'general', path: '/', text: 'Главная' },
+    { id: 'catalog', path: '/catalog', text: 'Каталог' },
+    { id: 'contacts', path: '/', text: 'Контакты' },
     { className: 'header-number', id: 'number', href: 'tel:+79873057274', text: '+79873057274' },
   ]
 
